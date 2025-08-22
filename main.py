@@ -17,7 +17,7 @@ def run():
 
     with sync_playwright() as p:
         logger.info("Launching browser...")
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=False) # Set headless=True to hide the browser (run without UI)
         context = browser.new_context(storage_state="github_state.json") # saved login cookies/tokens 
         page = context.new_page()
 
@@ -75,3 +75,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
